@@ -2,12 +2,12 @@ extends CharacterBody2D
 
 @export var is_final = false
 var triggered = false
-const b = 24
+const b = -260
 
 func _physics_process(_delta: float) -> void:
-	var input_dir = Input.("left", "right")
+	var input_dir = Input.get_vector("left", "right", "up", "down")
 	if not triggered:
-		velocity = input_dir * 300
+		velocity = input_dir * 500
 	else:
 		velocity = Vector2(0,0)
 	if is_final:
@@ -16,9 +16,9 @@ func _physics_process(_delta: float) -> void:
 
 	if position.x < b:
 		position.x = b
-	if position.y < b and not is_final:
-		position.y = b
-	if position.y > 624 and not is_final:
-		position.y = 624
-	if position.x > 1124:
-		position.x = 1124
+	if position.y < -225 and not is_final:
+		position.y = -225
+	if position.y > 213 and not is_final:
+		position.y = 213
+	if position.x > 260:
+		position.x = 260

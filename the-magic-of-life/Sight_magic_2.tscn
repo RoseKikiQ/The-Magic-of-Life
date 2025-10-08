@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://jb2cf1wmex8a"]
+
+[ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="1_jo3u4"]
+
+[node name="Node" type="Node"]
+
+[node name="Back to Menu" type="Button" parent="."]
+offset_left = 1035.0
+offset_top = 615.0
+offset_right = 1149.0
+offset_bottom = 646.0
+text = "Back to Menu"
+script = ExtResource("1_jo3u4")
+
+[connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
