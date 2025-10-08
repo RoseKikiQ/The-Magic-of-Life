@@ -1,3 +1,48 @@
-[gd_scene format=3 uid="uid://csd77jjngtglg"]
+[gd_scene load_steps=7 format=3 uid="uid://csd77jjngtglg"]
+
+[ext_resource type="Script" uid="uid://dmpqy8hn34nle" path="res://Reset.gd" id="1_e4qyy"]
+[ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="2_fjde8"]
+[ext_resource type="Texture2D" uid="uid://b05tlnnlqjilu" path="res://Screenshot 2025-10-07 202618.png" id="3_fjde8"]
+[ext_resource type="Texture2D" uid="uid://btamwps0tqb23" path="res://Screenshot 2025-10-07 202645.png" id="4_38a4i"]
+[ext_resource type="Texture2D" uid="uid://bsis6kvgmwt8k" path="res://Screenshot 2025-10-07 212644.png" id="5_38a4i"]
+[ext_resource type="Script" uid="uid://barjjdsq0ci66" path="res://character_body_2d.gd" id="5_ws7ka"]
 
 [node name="Node" type="Node"]
+
+[node name="Reset" type="Button" parent="."]
+offset_left = 1097.0
+offset_top = 580.0
+offset_right = 1148.0
+offset_bottom = 611.0
+text = "Reset"
+script = ExtResource("1_e4qyy")
+
+[node name="Back to Menu" type="Button" parent="."]
+offset_left = 1035.0
+offset_top = 615.0
+offset_right = 1149.0
+offset_bottom = 646.0
+text = "Back to Menu"
+script = ExtResource("2_fjde8")
+
+[node name="Screenshot20251007202618" type="Sprite2D" parent="."]
+position = Vector2(390, 317)
+scale = Vector2(0.6197581, 1.559)
+texture = ExtResource("3_fjde8")
+
+[node name="Screenshot20251007202645" type="Sprite2D" parent="."]
+position = Vector2(702, 318)
+scale = Vector2(0.8, 2.092614)
+texture = ExtResource("4_38a4i")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("5_ws7ka")
+is_final = null
+
+[node name="Screenshot20251007212644" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(546, 323)
+scale = Vector2(0.8899084, 0.8490566)
+texture = ExtResource("5_38a4i")
+
+[connection signal="pressed" from="Reset" to="Reset" method="_on_pressed"]
+[connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
