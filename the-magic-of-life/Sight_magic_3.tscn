@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://cejfxw548v3up"]
+
+[ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="1_udxe5"]
+[ext_resource type="Texture2D" uid="uid://b3wi143wx4lit" path="res://Untitled_Artwork (11).png" id="2_cco7g"]
+[ext_resource type="Script" uid="uid://drajlu28dthna" path="res://Back2.gd" id="2_gyo77"]
+[ext_resource type="Texture2D" uid="uid://bsis6kvgmwt8k" path="res://Screenshot 2025-10-07 212644.png" id="4_ftlxt"]
+
+[node name="Node" type="Node"]
+
+[node name="Back to Menu" type="Button" parent="."]
+offset_left = 1035.0
+offset_top = 615.0
+offset_right = 1149.0
+offset_bottom = 646.0
+text = "Back to Menu"
+script = ExtResource("1_udxe5")
+
+[node name="Button" type="Button" parent="."]
+offset_left = 3.0
+offset_top = 615.0
+offset_right = 48.0
+offset_bottom = 646.0
+text = "Back"
+script = ExtResource("2_gyo77")
+
+[node name="UntitledArtwork(11)" type="Sprite2D" parent="."]
+position = Vector2(554.74994, 312.5625)
+scale = Vector2(0.5371796, 0.41617876)
+texture = ExtResource("2_cco7g")
+
+[node name="Screenshot20251007212644" type="Sprite2D" parent="."]
+position = Vector2(367, 321.00003)
+scale = Vector2(0.56422013, 0.9999997)
+texture = ExtResource("4_ftlxt")
+
+[node name="Screenshot20251007212645" type="Sprite2D" parent="."]
+position = Vector2(902, 322.00003)
+scale = Vector2(0.56422013, 0.9999997)
+texture = ExtResource("4_ftlxt")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 454.0
+offset_top = 592.0
+offset_right = 672.0
+offset_bottom = 623.0
+text = "Notice the size difference?"
+
+[connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

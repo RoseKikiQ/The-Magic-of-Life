@@ -1,6 +1,5 @@
 extends Button
 
-
 func _on_pressed() -> void:
 	var texture_rect = $"../Half_White"
 	var mat = texture_rect.material

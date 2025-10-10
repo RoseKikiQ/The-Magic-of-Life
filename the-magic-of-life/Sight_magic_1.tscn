@@ -164,7 +164,7 @@ script = ExtResource("14_uvv7w")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 
 [node name="Screenshot20251007212644" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(403.875, 294)
+position = Vector2(391, 303)
 scale = Vector2(1.3050463, 0.8490566)
 texture = ExtResource("5_38a4i")
 
@@ -177,16 +177,16 @@ text = "Next Level"
 script = ExtResource("12_0qk2s")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 246.0
-offset_top = 595.0
-offset_right = 852.0
-offset_bottom = 629.0
-text = "Why does the blue block look so light against black yet so dark against white?"
+offset_left = 440.0
+offset_top = 603.0
+offset_right = 666.0
+offset_bottom = 637.0
+text = "Notice the color difference?"
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 
 [node name="Screenshot20251007212644" type="Sprite2D" parent="CharacterBody2D2"]
-position = Vector2(714, 294)
+position = Vector2(713.00006, 303)
 scale = Vector2(1.3188077, 0.8490566)
 texture = ExtResource("5_38a4i")
 

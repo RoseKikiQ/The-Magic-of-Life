@@ -1,20 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdpxnpel1ppgj"]
+[gd_scene load_steps=5 format=3 uid="uid://cdpxnpel1ppgj"]
 
 [ext_resource type="Texture2D" uid="uid://ti3otpot0f21" path="res://Screenshot 2025-10-07 155122.png" id="1_5yleq"]
 [ext_resource type="Script" uid="uid://del7oomwr0kxr" path="res://SightButton.gd" id="1_uubjt"]
+[ext_resource type="Script" uid="uid://ck5idy22ie58t" path="res://element_magic.gd" id="3_ylpcl"]
+[ext_resource type="Script" uid="uid://dqvhsljog6eyy" path="res://hearing_magic.gd" id="4_cx167"]
 
 [node name="Node" type="Node"]
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(567, 220)
-scale = Vector2(0.5151406, 0.5372671)
+position = Vector2(560.00006, 214)
+scale = Vector2(0.5228911, 0.5636647)
 texture = ExtResource("1_5yleq")
 
 [node name="Sight Magic" type="Button" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 offset_left = 484.0
 offset_top = 372.0
-offset_right = 619.0
-offset_bottom = 403.0
+offset_right = -533.0
+offset_bottom = -245.0
+grow_horizontal = 2
+grow_vertical = 2
 text = "Sight Magic"
 script = ExtResource("1_uubjt")
 
@@ -24,5 +31,16 @@ offset_top = 487.0
 offset_right = 621.0
 offset_bottom = 521.0
 text = "Element Magic"
+script = ExtResource("3_ylpcl")
+
+[node name="Hearing Magic" type="Button" parent="."]
+offset_left = 486.0
+offset_top = 429.0
+offset_right = 619.0
+offset_bottom = 460.0
+text = "Hearing Magic"
+script = ExtResource("4_cx167")
 
 [connection signal="pressed" from="Sight Magic" to="Sight Magic" method="_on_pressed"]
+[connection signal="pressed" from="Element Magic" to="Element Magic" method="_on_pressed"]
+[connection signal="pressed" from="Hearing Magic" to="Hearing Magic" method="_on_pressed"]

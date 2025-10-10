@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://4gxllnm4n3jh"]
+
+[ext_resource type="Texture2D" uid="uid://dp8nilkpe7cpg" path="res://wuxing.png" id="1_kkj4k"]
+[ext_resource type="Texture2D" uid="uid://c0omeofqt1mag" path="res://Untitled_Artwork (6).png" id="2_vnebb"]
+[ext_resource type="Texture2D" uid="uid://cv8bwpsecnft7" path="res://Untitled_Artwork (12).png" id="3_1onlm"]
+[ext_resource type="Texture2D" uid="uid://b4l2sj0shnk2x" path="res://Untitled_Artwork (7).png" id="4_mll0r"]
+[ext_resource type="Texture2D" uid="uid://bem1mmvyur0ha" path="res://Untitled_Artwork (8).png" id="5_hx22j"]
+[ext_resource type="Texture2D" uid="uid://doy4k7m0rb7bn" path="res://Untitled_Artwork (10).png" id="6_h5i7t"]
+[ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="7_vnebb"]
+
+[node name="Node" type="Node"]
+
+[node name="Wuxing" type="Sprite2D" parent="."]
+position = Vector2(538, 300)
+texture = ExtResource("1_kkj4k")
+
+[node name="UntitledArtwork(6)" type="Sprite2D" parent="."]
+position = Vector2(395.00003, 265.00003)
+scale = Vector2(0.085952744, 0.07366943)
+texture = ExtResource("2_vnebb")
+
+[node name="UntitledArtwork(12)" type="Sprite2D" parent="."]
+position = Vector2(533, 151)
+scale = Vector2(0.048339844, 0.055664063)
+texture = ExtResource("3_1onlm")
+
+[node name="UntitledArtwork(7)" type="Sprite2D" parent="."]
+position = Vector2(708, 277)
+scale = Vector2(0.08544923, 0.07592773)
+texture = ExtResource("4_mll0r")
+
+[node name="UntitledArtwork(8)" type="Sprite2D" parent="."]
+position = Vector2(630.00006, 431)
+scale = Vector2(0.09204103, 0.10083005)
+texture = ExtResource("5_hx22j")
+
+[node name="UntitledArtwork(10)" type="Sprite2D" parent="."]
+position = Vector2(448.00006, 436)
+scale = Vector2(0.10424805, 0.09973145)
+texture = ExtResource("6_h5i7t")
+
+[node name="Back to Menu" type="Button" parent="."]
+offset_left = 1035.0
+offset_top = 615.0
+offset_right = 1149.0
+offset_bottom = 646.0
+text = "Back to Menu"
+script = ExtResource("7_vnebb")
+
+[connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
