@@ -41,6 +41,13 @@ offset_bottom = 460.0
 text = "Hearing Magic"
 script = ExtResource("4_cx167")
 
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 373.0
+offset_top = 289.0
+offset_right = 733.0
+offset_bottom = 321.0
+text = "Sences that might trick you in life + elements"
+
 [connection signal="pressed" from="Sight Magic" to="Sight Magic" method="_on_pressed"]
 [connection signal="pressed" from="Element Magic" to="Element Magic" method="_on_pressed"]
 [connection signal="pressed" from="Hearing Magic" to="Hearing Magic" method="_on_pressed"]

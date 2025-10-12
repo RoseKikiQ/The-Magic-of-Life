@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://jb2cf1wmex8a"]
+[gd_scene load_steps=6 format=3 uid="uid://jb2cf1wmex8a"]
 
 [ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="1_jo3u4"]
 [ext_resource type="Script" uid="uid://cg0l3evvvupfm" path="res://next_level2.gd" id="2_5dqcp"]
 [ext_resource type="Script" uid="uid://cg0myke2ec1gt" path="res://back1.gd" id="3_o087g"]
+[ext_resource type="Texture2D" uid="uid://bnanepfs7kyh8" path="res://Screenshot 2025-10-11 180651.png" id="4_c4vgk"]
+[ext_resource type="Texture2D" uid="uid://bsis6kvgmwt8k" path="res://Screenshot 2025-10-07 212644.png" id="5_q8odj"]
 
 [node name="Node" type="Node"]
 
@@ -29,6 +31,28 @@ offset_right = 55.0
 offset_bottom = 645.0
 text = "Back"
 script = ExtResource("3_o087g")
+
+[node name="Screenshot20251011180651" type="Sprite2D" parent="."]
+position = Vector2(560.76843, 301.0318)
+scale = Vector2(1.4355891, 1.3189942)
+texture = ExtResource("4_c4vgk")
+
+[node name="Screenshot20251007212644" type="Sprite2D" parent="."]
+position = Vector2(358.7685, 437.03177)
+scale = Vector2(0.77981615, 0.8301886)
+texture = ExtResource("5_q8odj")
+
+[node name="Screenshot20251007212645" type="Sprite2D" parent="."]
+position = Vector2(714.76843, 208.0318)
+scale = Vector2(0.77981615, 0.8301886)
+texture = ExtResource("5_q8odj")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 384.0
+offset_top = 592.0
+offset_right = 752.0
+offset_bottom = 628.0
+text = "What you see may not actually be what's true."
 
 [connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
 [connection signal="pressed" from="Next Level" to="Next Level" method="_on_pressed"]

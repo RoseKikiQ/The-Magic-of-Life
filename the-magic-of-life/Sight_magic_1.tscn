@@ -177,11 +177,12 @@ text = "Next Level"
 script = ExtResource("12_0qk2s")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 440.0
-offset_top = 603.0
-offset_right = 666.0
-offset_bottom = 637.0
-text = "Notice the color difference?"
+offset_left = 443.0
+offset_top = 583.0
+offset_right = 671.0
+offset_bottom = 647.0
+text = "Notice the color difference?
+Well, there was none."
 
 [node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 

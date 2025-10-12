@@ -1,43 +1,152 @@
-[gd_scene load_steps=8 format=3 uid="uid://4gxllnm4n3jh"]
+[gd_scene load_steps=23 format=3 uid="uid://4gxllnm4n3jh"]
 
 [ext_resource type="Texture2D" uid="uid://dp8nilkpe7cpg" path="res://wuxing.png" id="1_kkj4k"]
+[ext_resource type="Script" uid="uid://ds5ec7qwfendm" path="res://WaterDrag.gd" id="2_1onlm"]
 [ext_resource type="Texture2D" uid="uid://c0omeofqt1mag" path="res://Untitled_Artwork (6).png" id="2_vnebb"]
 [ext_resource type="Texture2D" uid="uid://cv8bwpsecnft7" path="res://Untitled_Artwork (12).png" id="3_1onlm"]
+[ext_resource type="Texture2D" uid="uid://d3yvhd6gc4mka" path="res://Untitled_Artwork (16).png" id="4_7hk53"]
+[ext_resource type="Script" uid="uid://do7yatocqkp6i" path="res://PlantDrag.gd" id="4_hx22j"]
 [ext_resource type="Texture2D" uid="uid://b4l2sj0shnk2x" path="res://Untitled_Artwork (7).png" id="4_mll0r"]
+[ext_resource type="Texture2D" uid="uid://b0rajql3ssx4s" path="res://Untitled_Artwork (21).png" id="5_citpx"]
 [ext_resource type="Texture2D" uid="uid://bem1mmvyur0ha" path="res://Untitled_Artwork (8).png" id="5_hx22j"]
 [ext_resource type="Texture2D" uid="uid://doy4k7m0rb7bn" path="res://Untitled_Artwork (10).png" id="6_h5i7t"]
+[ext_resource type="Texture2D" uid="uid://ckoqbydxprghy" path="res://Untitled_Artwork (17).png" id="6_lbgu7"]
+[ext_resource type="Script" uid="uid://bt2jrjvnwm87f" path="res://FireDrag.gd" id="7_e5ul7"]
 [ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="7_vnebb"]
+[ext_resource type="Texture2D" uid="uid://cenp5dmn3hb1a" path="res://Untitled_Artwork (5).png" id="8_8nvdv"]
+[ext_resource type="Script" uid="uid://bh44mr2dgcm7p" path="res://EarthDrag.gd" id="9_uoqym"]
+[ext_resource type="Script" uid="uid://66gfp0yypxph" path="res://elementreset.gd" id="10_hx22j"]
+[ext_resource type="Texture2D" uid="uid://dmeo81n06rd36" path="res://Untitled_Artwork (19).png" id="10_mknlk"]
+[ext_resource type="Script" uid="uid://cdd5es05sdywq" path="res://MetalDrag.gd" id="11_7xfkl"]
+[ext_resource type="Texture2D" uid="uid://bkcmkd8kyvbms" path="res://Untitled_Artwork (15).png" id="11_uoqym"]
+[ext_resource type="Texture2D" uid="uid://bst4ip6kon6by" path="res://Untitled_Artwork (13).png" id="14_7xfkl"]
+[ext_resource type="Texture2D" uid="uid://cdqjagryp81iq" path="res://Untitled_Artwork (18).png" id="15_citpx"]
+[ext_resource type="Texture2D" uid="uid://b7un78f0ejtaj" path="res://Untitled_Artwork (20).png" id="19_kj7p8"]
 
 [node name="Node" type="Node"]
 
 [node name="Wuxing" type="Sprite2D" parent="."]
-position = Vector2(538, 300)
+position = Vector2(751, 382)
 texture = ExtResource("1_kkj4k")
 
-[node name="UntitledArtwork(6)" type="Sprite2D" parent="."]
-position = Vector2(395.00003, 265.00003)
+[node name="Water" type="Area2D" parent="."]
+position = Vector2(608, 347.00003)
 scale = Vector2(0.085952744, 0.07366943)
+script = ExtResource("2_1onlm")
+
+[node name="UntitledArtwork(6)" type="Sprite2D" parent="Water"]
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("2_vnebb")
 
-[node name="UntitledArtwork(12)" type="Sprite2D" parent="."]
-position = Vector2(533, 151)
+[node name="UntitledArtwork(16)" type="Sprite2D" parent="Water"]
+visible = false
+position = Vector2(11.633911, 13.573639)
+scale = Vector2(1.212853, 1.3537697)
+texture = ExtResource("4_7hk53")
+
+[node name="UntitledArtwork(21)" type="Sprite2D" parent="Water"]
+visible = false
+position = Vector2(-81.440674, -40.72287)
+scale = Vector2(0.6621695, 0.79991716)
+texture = ExtResource("5_citpx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Water"]
+polygon = PackedVector2Array(-93.07471, -800.87524, 302.4917, -162.89014, 360.6631, -81.44531, 372.29736, -13.574463, 383.93164, 95.0188, 383.93164, 176.46362, 360.6631, 285.0569, 325.76025, 352.9275, 221.05176, 461.52075, 127.97705, 529.39136, 34.902832, 570.114, -58.171387, 583.68823, -174.51465, 570.114, -279.22314, 515.81714, -360.66357, 434.3723, -430.46924, 325.7793, -465.37207, 217.18604, -465.37207, 108.59277, -430.46924, -27.148682, -360.66357, -230.76099, -267.58887, -434.3733, -104.708984, -719.4304, -81.44043, -773.7268)
+
+[node name="Plant" type="Area2D" parent="."]
+position = Vector2(746, 233)
 scale = Vector2(0.048339844, 0.055664063)
+script = ExtResource("4_hx22j")
+
+[node name="UntitledArtwork(12)" type="Sprite2D" parent="Plant"]
 texture = ExtResource("3_1onlm")
 
-[node name="UntitledArtwork(7)" type="Sprite2D" parent="."]
-position = Vector2(708, 277)
+[node name="UntitledArtwork(17)" type="Sprite2D" parent="Plant"]
+visible = false
+position = Vector2(310.30273, -197.61398)
+scale = Vector2(2.0542922, 1.8157896)
+texture = ExtResource("6_lbgu7")
+
+[node name="UntitledArtwork(5)" type="Sprite2D" parent="Plant"]
+visible = false
+position = Vector2(206.86829, 71.85962)
+scale = Vector2(1.6616163, 1.486842)
+texture = ExtResource("8_8nvdv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Plant"]
+polygon = PackedVector2Array(62.060547, -17.964844, 62.060547, -107.78931, 62.060547, -215.57886, 103.43457, -341.33325, 227.55566, -449.1228, 413.7373, -503.01733, 620.60645, -485.0525, 682.667, -467.08765, 641.29297, -449.1228, 620.60645, -413.19287, 620.60645, -377.26294, 599.9199, -305.40332, 579.2324, -269.47363, 537.8594, -215.57886, 496.48535, -179.64893, 413.7373, -143.71924, 310.3037, -107.78931, 186.18262, -71.85962, 144.8086, -53.89453, 82.74805, -17.964844, 62.060547, 17.965088, 103.43457, 107.78955, 124.12207, 251.50879, 124.12207, 431.15796, 103.43457, 610.8071, 62.060547, 718.5967, 20.6875, 736.5615, -20.686523, 718.5967, -41.373047, 682.66675, 0, 574.8772, 20.6875, 485.05273, 41.374023, 377.26318, 62.060547, 233.54395, 41.374023, 107.78955, 20.6875, 35.92993, 20.6875, 17.965088, -20.686523, 17.965088, -82.74707, 17.965088, -206.86816, 71.85986, -310.30273, 143.71948, -393.0498, 197.61426, -475.79785, 215.5791, -496.48438, 233.54395, -537.8584, 233.54395, -579.23145, 233.54395, -620.60547, 215.5791, -661.9795, 215.5791, -724.04004, 269.47388, -744.72656, 269.47388, -744.72656, 251.50879, -703.3535, 107.78955, -620.60547, -35.929688, -455.11035, -143.71924, -372.36328, -161.68408, -310.30273, -161.68408, -248.24219, -161.68408, -165.49414, -143.71924, -41.373047, -71.85962, 0, -17.964844, 0, -71.85962)
+
+[node name="Fire" type="Area2D" parent="."]
+position = Vector2(921, 359)
 scale = Vector2(0.08544923, 0.07592773)
+script = ExtResource("7_e5ul7")
+
+[node name="UntitledArtwork(7)" type="Sprite2D" parent="Fire"]
+scale = Vector2(1.0000001, 1)
 texture = ExtResource("4_mll0r")
 
-[node name="UntitledArtwork(8)" type="Sprite2D" parent="."]
-position = Vector2(630.00006, 431)
+[node name="UntitledArtwork(7)2" type="Sprite2D" parent="Fire"]
+visible = false
+position = Vector2(23.405762, 39.51123)
+scale = Vector2(1.9428569, 2.131833)
+texture = ExtResource("4_mll0r")
+
+[node name="UntitledArtwork(19)" type="Sprite2D" parent="Fire"]
+visible = false
+position = Vector2(-152.13623, -131.70386)
+scale = Vector2(1.0000001, 1)
+texture = ExtResource("10_mknlk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Fire"]
+polygon = PackedVector2Array(-538.33154, -513.6465, -514.9258, -513.6465, -503.22266, -487.30566, -479.8169, -381.94214, -468.11426, -342.4309, -421.30273, -302.91968, -433.00586, -171.21558, -409.6001, -171.21558, -409.6001, -210.7268, -386.19434, -158.04517, -362.78857, -131.70435, -327.68018, -131.70435, -327.68018, -184.38599, -292.5713, -237.06763, -292.5713, -342.4309, -315.97705, -408.28296, -362.78857, -500.47607, -351.08545, -579.49854, -327.68018, -645.3506, -339.3828, -737.54346, -292.5713, -658.521, -280.86865, -658.521, -292.5713, -605.83936, -304.2744, -513.6465, -315.97705, -474.13525, -327.68018, -447.79443, -315.97705, -408.28296, -269.16553, -487.30566, -222.354, -632.1802, -210.65137, -592.66895, -210.65137, -513.6465, -175.54297, -460.96484, -175.54297, -434.62378, -140.43408, -408.28296, -105.32568, -276.57886, -70.2168, -250.23804, -23.405273, -395.11255, -35.1084, -447.79443, -35.1084, -500.47607, 0, -408.28296, 0, -368.77173, -11.703125, -276.57886, -23.405273, -223.89722, -11.703125, -210.7268, 11.703125, -197.5564, 46.811523, -184.38599, 46.811523, -144.87476, 93.62305, -171.21558, 93.62305, -223.89722, 58.51465, -250.23804, 70.2168, -289.74927, 152.13672, -566.3281, 128.73145, -421.45337, 140.43457, -368.77173, 128.73145, -316.0901, 128.73145, -276.57886, 152.13672, -289.74927, 152.13672, -329.2605, 163.83984, -289.74927, 163.83984, -263.40845, 152.13672, -197.5564, 140.43457, -131.70435, 128.73145, -105.36328, 105.32617, -65.85205, 105.32617, 0, 117.02832, 26.34082, 152.13672, 92.19287, 175.54297, 92.19287, 163.83984, 26.34082, 163.83984, -65.85205, 175.54297, -131.70435, 187.2461, -144.87476, 198.94824, -92.19287, 198.94824, -52.68164, 187.2461, -26.34082, 175.54297, 0, 198.94824, 79.02246, 222.35449, 118.53369, 222.35449, 171.21533, 234.05762, 223.89697, 234.05762, 263.40845, 210.65137, 302.91968, 198.94824, 316.0901, 187.2461, 329.2605, 175.54297, 342.4309, 175.54297, 355.60132, 187.2461, 368.77173, 234.05762, 329.2605, 222.35449, 368.77173, 210.65137, 395.11255, 187.2461, 421.45337, 163.83984, 447.7942, 140.43457, 474.135, 93.62305, 500.47583, 58.51465, 513.64624, 11.703125, 539.98706, -58.51465, 553.1575, -152.1372, 566.3279, -245.75977, 566.3279, -327.68018, 566.3279, -374.4912, 553.1575, -397.89697, 539.98706, -433.00586, 513.64624, -479.8169, 474.135, -526.6284, 434.62378, -561.7373, 395.11255, -608.54834, 368.77173, -631.9541, 329.2605, -643.6572, 289.74927, -643.6572, 237.06763, -643.6572, 184.38574, -643.6572, 131.7041, -631.9541, 65.85205, -631.9541, -13.17041, -643.6572, -79.02246, -643.6572, -105.36328, -620.25146, -118.533936, -608.54834, -105.36328, -596.8457, -65.85205, -585.1426, -13.17041, -585.1426, 79.02246, -596.8457, 131.7041, -561.7373, 197.55615, -550.0342, 210.72656, -550.0342, 171.21533, -550.0342, 92.19287, -550.0342, 13.17041, -538.33154, 65.85205, -538.33154, 92.19287, -526.6284, 118.53369, -491.52002, 131.7041, -491.52002, 158.04492, -479.8169, 171.21533, -468.11426, 171.21533, -456.41113, 158.04492, -468.11426, 92.19287, -479.8169, 65.85205, -503.22266, 26.34082, -514.9258, 0, -526.6284, -79.02246, -526.6284, -144.87476, -514.9258, -171.21558, -503.22266, -250.23804, -503.22266, -289.74927, -514.9258, -316.0901, -550.0342, -395.11255)
+
+[node name="Earth" type="Area2D" parent="."]
+position = Vector2(843, 513)
 scale = Vector2(0.09204103, 0.10083005)
+script = ExtResource("9_uoqym")
+
+[node name="UntitledArtwork(8)" type="Sprite2D" parent="Earth"]
+position = Vector2(-0.00066312985, 0)
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("5_hx22j")
 
-[node name="UntitledArtwork(10)" type="Sprite2D" parent="."]
-position = Vector2(448.00006, 436)
+[node name="UntitledArtwork(15)" type="Sprite2D" parent="Earth"]
+visible = false
+position = Vector2(-0.00048828125, 0)
+scale = Vector2(0.98441607, 0.9943253)
+texture = ExtResource("11_uoqym")
+
+[node name="UntitledArtwork(18)" type="Sprite2D" parent="Earth"]
+visible = false
+position = Vector2(-0.0009765625, 39.670593)
+scale = Vector2(1.0106096, 1.0072644)
+texture = ExtResource("15_citpx")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Earth"]
+polygon = PackedVector2Array(-173.83643, -138.84717, -119.512695, -109.09424, -86.91846, -69.42383, -32.594727, -89.25879, 43.458008, -99.17676, 108.646484, -49.58838, 130.37598, -39.67041, 162.97021, -19.83545, 206.4292, -9.91748, 228.1582, 0, 249.8877, 9.917969, 260.75244, 39.6709, 271.6172, 49.58838, 304.21143, 59.506348, 336.80566, 49.58838, 358.53516, 69.42383, 401.99414, 89.25928, 456.31738, 198.35352, 488.91162, 257.85986, 499.77637, 277.6953, 488.91162, 297.53027, 478.04688, 317.36572, 445.45264, 337.20117, 380.26465, 347.11865, 325.94092, 386.78955, 249.8877, 396.70703, 184.6997, 386.78955, 162.97021, 396.70703, 119.51123, 396.70703, 86.91699, 406.625, 32.59326, 406.625, 10.86377, 396.70703, -21.72998, 386.78955, -54.32422, 396.70703, -86.91846, 416.54248, -152.10693, 416.54248, -184.70117, 416.54248, -217.29492, 396.70703, -271.61865, 406.625, -282.4834, 406.625, -304.2129, 386.78955, -325.94238, 406.625, -347.67188, 406.625, -369.40137, 406.625, -423.7246, 416.54248, -434.58936, 416.54248, -478.04834, 406.625, -499.77783, 386.78955, -554.10156, 347.11865, -564.9663, 337.20117, -575.83105, 307.44824, -564.9663, 277.6953, -543.2368, 257.85986, -521.5073, 208.27148, -499.77783, 188.43604, -467.1836, 188.43604, -445.4541, 178.51855, -423.7246, 158.6831, -412.85986, 128.93018, -423.7246, 109.09473, -423.7246, 89.25928, -401.99512, 59.506348, -391.13037, 49.58838, -380.2661, 19.83545, -358.53662, -19.83545, -347.67188, -39.67041, -325.94238, -49.58838, -293.34814, -59.50586, -271.61865, -69.42383, -249.88916, -79.34131, -228.15967, -89.25879, -217.29492, -119.01221)
+
+[node name="Metal" type="Area2D" parent="."]
+position = Vector2(661.00006, 518)
 scale = Vector2(0.10424805, 0.09973145)
+script = ExtResource("11_7xfkl")
+
+[node name="UntitledArtwork(10)" type="Sprite2D" parent="Metal"]
 texture = ExtResource("6_h5i7t")
+
+[node name="UntitledArtwork(13)" type="Sprite2D" parent="Metal"]
+visible = false
+position = Vector2(-67.14795, -90.242676)
+scale = Vector2(0.8032787, 0.859241)
+texture = ExtResource("14_7xfkl")
+
+[node name="UntitledArtwork(20)" type="Sprite2D" parent="Metal"]
+visible = false
+position = Vector2(-60.85306, 86.16888)
+scale = Vector2(0.76492983, 0.79895955)
+texture = ExtResource("19_kj7p8")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Metal"]
+polygon = PackedVector2Array(-450.8484, -10.026855, -470.0332, -30.081055, -470.0332, -50.134766, -460.44092, -80.21533, -431.66333, -110.29639, -393.2932, -140.37695, -345.3308, -180.48486, -268.59058, -200.53857, -201.44336, -220.59229, -105.51807, -240.64648, -76.74072, -240.64648, -38.370605, -240.64648, 95.924805, -240.64648, 220.62695, -240.64648, 287.7749, -220.59229, 326.14453, -190.51172, 345.3296, -150.40381, 345.3296, -110.29639, 345.3296, -20.05371, 316.55225, 50.134766, 287.7749, 90.24219, 249.40479, 140.37695, 211.03467, 190.51172, 191.84961, 230.61914, 172.66455, 260.7002, 134.29443, 300.80762, 95.924805, 320.86182, 67.14697, 360.96924, 28.776855, 391.0503, -0.00048828125, 411.104, -67.14795, 421.13086, -95.92578, 421.13086, -163.07324, 421.13086, -211.03564, 411.104, -258.99805, 401.07715, -345.3308, 381.02295, -402.88574, 360.96924, -460.44092, 340.91553, -489.21826, 320.86182, -508.40332, 300.80762, -508.40332, 280.7539, -498.8108, 250.67334, -479.62573, 210.56543, -460.44092, 170.45752, -460.44092, 140.37695, -460.44092, 110.2959, -450.8484, 70.18848, -441.25586, 60.16162, -431.66333, 60.16162, -431.66333, 40.10742, -441.25586, 10.026855)
 
 [node name="Back to Menu" type="Button" parent="."]
 offset_left = 1035.0
@@ -47,4 +156,48 @@ offset_bottom = 646.0
 text = "Back to Menu"
 script = ExtResource("7_vnebb")
 
+[node name="Reset" type="Button" parent="."]
+offset_left = 1096.0
+offset_top = 581.0
+offset_right = 1147.0
+offset_bottom = 612.0
+text = "Reset"
+script = ExtResource("10_hx22j")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 3.0
+offset_right = 513.0
+offset_bottom = 279.0
+text = "Wood generates fire: Burning wood produces more flames.
+Fire generates earth: Fire burns wood, reducing it to earth.
+Earth generates metal: Metal deposits are found in the soil 
+Metal generates water: Metals melt in high temperatures
+Water generates wood: Water helps trees grow.
+Wood overcomes earth: Plants takes the nutrients from the soil
+Earth overcomes water: Soil can prevent the flow of water.
+Water overcomes fire: Water can extinguish fire
+Fire overcomes metal: Fire can melt solid metal.
+Metal overcomes wood: Metal can be used to cut wood."
+
+[connection signal="area_entered" from="Water" to="Plant" method="_on_water_area_entered"]
+[connection signal="area_entered" from="Water" to="Fire" method="_on_water_area_entered"]
+[connection signal="mouse_entered" from="Water" to="Water" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Water" to="Water" method="_on_mouse_exited"]
+[connection signal="area_entered" from="Plant" to="Fire" method="_on_plant_area_entered"]
+[connection signal="area_entered" from="Plant" to="Earth" method="_on_plant_area_entered"]
+[connection signal="mouse_entered" from="Plant" to="Plant" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Plant" to="Plant" method="_on_mouse_exited"]
+[connection signal="area_entered" from="Fire" to="Earth" method="_on_fire_area_entered"]
+[connection signal="area_entered" from="Fire" to="Metal" method="_on_fire_area_entered"]
+[connection signal="mouse_entered" from="Fire" to="Fire" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Fire" to="Fire" method="_on_mouse_exited"]
+[connection signal="area_entered" from="Earth" to="Water" method="_on_earth_area_entered"]
+[connection signal="area_entered" from="Earth" to="Metal" method="_on_earth_area_entered"]
+[connection signal="mouse_entered" from="Earth" to="Earth" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Earth" to="Earth" method="_on_mouse_exited"]
+[connection signal="area_entered" from="Metal" to="Water" method="_on_metal_area_entered"]
+[connection signal="area_entered" from="Metal" to="Plant" method="_on_metal_area_entered"]
+[connection signal="mouse_entered" from="Metal" to="Metal" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Metal" to="Metal" method="_on_mouse_exited"]
 [connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
+[connection signal="pressed" from="Reset" to="Reset" method="_on_pressed"]

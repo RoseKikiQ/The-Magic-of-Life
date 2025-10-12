@@ -13,12 +13,3 @@ func _physics_process(_delta: float) -> void:
 	if is_final:
 		velocity.y = 0
 	move_and_slide()
-
-	if position.x < b:
-		position.x = b
-	if position.y < -225 and not is_final:
-		position.y = -225
-	if position.y > 213 and not is_final:
-		position.y = 213
-	if position.x > 260:
-		position.x = 260

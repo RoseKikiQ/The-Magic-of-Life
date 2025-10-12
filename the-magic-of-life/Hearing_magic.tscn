@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0bbh1lvldyyq"]
+[gd_scene load_steps=11 format=3 uid="uid://d0bbh1lvldyyq"]
 
 [ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="1_vdvee"]
+[ext_resource type="Script" uid="uid://di241fk4e6gqm" path="res://Quite_music.gd" id="2_cmihd"]
+[ext_resource type="Script" uid="uid://diujtsxllg555" path="res://Start.gd" id="2_ukqhs"]
+[ext_resource type="AudioStream" uid="uid://c7elcic3lehsn" path="res://Morning.mp3" id="3_n3lal"]
+[ext_resource type="AudioStream" uid="uid://b4sjxvgyk71hq" path="res://Godot Sound.mp3" id="3_oedmo"]
+[ext_resource type="Script" uid="uid://xr261o8u6i3g" path="res://People_talking.gd" id="4_n3lal"]
+[ext_resource type="AudioStream" uid="uid://bvjxa4ic1qqe3" path="res://Every_Lesson.mp3" id="5_yidc2"]
+[ext_resource type="Script" uid="uid://dcbigry8gugab" path="res://Loud_music.gd" id="6_arra4"]
+[ext_resource type="AudioStream" uid="uid://dbhngbgdtbyio" path="res://RMarch.mp3" id="7_e6lbl"]
+[ext_resource type="Script" uid="uid://few8ddiwxx7" path="res://Reset2.gd" id="10_oedmo"]
 
 [node name="Node" type="Node"]
 
@@ -18,16 +27,22 @@ offset_top = 479.0
 offset_right = 578.0
 offset_bottom = 510.0
 text = "Start"
+script = ExtResource("2_ukqhs")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Start"]
-position = Vector2(-491, -479)
+stream = ExtResource("3_oedmo")
 
 [node name="Quite music" type="Button" parent="."]
-offset_left = 161.0
+offset_left = 160.0
 offset_top = 300.0
-offset_right = 261.0
+offset_right = 260.0
 offset_bottom = 331.0
 text = "Quite Music"
+script = ExtResource("2_cmihd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Quite music"]
+position = Vector2(-172, -300)
+stream = ExtResource("3_n3lal")
 
 [node name="Loud music" type="Button" parent="."]
 offset_left = 481.0
@@ -35,12 +50,41 @@ offset_top = 301.0
 offset_right = 577.0
 offset_bottom = 336.0
 text = "Loud Music"
+script = ExtResource("6_arra4")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Loud music"]
+stream = ExtResource("7_e6lbl")
 
 [node name="People talking" type="Button" parent="."]
 offset_left = 798.0
 offset_top = 300.0
 offset_right = 914.0
 offset_bottom = 331.0
-text = "People Taking"
+text = "People Talking"
+script = ExtResource("4_n3lal")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="People talking"]
+position = Vector2(-798, -300)
+stream = ExtResource("5_yidc2")
+
+[node name="Reset" type="Button" parent="."]
+offset_left = 1096.0
+offset_top = 580.0
+offset_right = 1147.0
+offset_bottom = 611.0
+text = "Reset"
+script = ExtResource("10_oedmo")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 207.0
+offset_top = 114.0
+offset_right = 866.0
+offset_bottom = 153.0
+text = "We can hear conversations in any environment, but we may not understand them."
 
 [connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
+[connection signal="pressed" from="Start" to="Start" method="_on_pressed"]
+[connection signal="pressed" from="Quite music" to="Quite music" method="_on_pressed"]
+[connection signal="pressed" from="Loud music" to="Loud music" method="_on_pressed"]
+[connection signal="pressed" from="People talking" to="People talking" method="_on_pressed"]
+[connection signal="pressed" from="Reset" to="Reset" method="_on_pressed"]
