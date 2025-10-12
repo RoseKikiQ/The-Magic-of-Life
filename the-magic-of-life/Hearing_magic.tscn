@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0bbh1lvldyyq"]
+[gd_scene load_steps=14 format=3 uid="uid://d0bbh1lvldyyq"]
 
 [ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="1_vdvee"]
 [ext_resource type="Script" uid="uid://di241fk4e6gqm" path="res://Quite_music.gd" id="2_cmihd"]
 [ext_resource type="Script" uid="uid://diujtsxllg555" path="res://Start.gd" id="2_ukqhs"]
 [ext_resource type="AudioStream" uid="uid://c7elcic3lehsn" path="res://Morning.mp3" id="3_n3lal"]
 [ext_resource type="AudioStream" uid="uid://b4sjxvgyk71hq" path="res://Godot Sound.mp3" id="3_oedmo"]
+[ext_resource type="Texture2D" uid="uid://c341pwsn4rikm" path="res://photo-1464660439080-b79116909ce7.jpg" id="4_gfrn0"]
 [ext_resource type="Script" uid="uid://xr261o8u6i3g" path="res://People_talking.gd" id="4_n3lal"]
 [ext_resource type="AudioStream" uid="uid://bvjxa4ic1qqe3" path="res://Every_Lesson.mp3" id="5_yidc2"]
 [ext_resource type="Script" uid="uid://dcbigry8gugab" path="res://Loud_music.gd" id="6_arra4"]
 [ext_resource type="AudioStream" uid="uid://dbhngbgdtbyio" path="res://RMarch.mp3" id="7_e6lbl"]
+[ext_resource type="Texture2D" uid="uid://bqewi5o86sc6b" path="res://6NVQQiGeSYZV3cHf1mhLGd-parade.jpg" id="7_wtb7g"]
+[ext_resource type="Texture2D" uid="uid://eyu7j20iw2bl" path="res://the-levitation-charm_3_1800x1248.png" id="10_lifbq"]
 [ext_resource type="Script" uid="uid://few8ddiwxx7" path="res://Reset2.gd" id="10_oedmo"]
 
 [node name="Node" type="Node"]
@@ -32,11 +35,16 @@ script = ExtResource("2_ukqhs")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Start"]
 stream = ExtResource("3_oedmo")
 
+[node name="Photo1464660439080B79116909Ce7" type="Sprite2D" parent="."]
+position = Vector2(223, 264)
+scale = Vector2(0.08245834, 0.09417099)
+texture = ExtResource("4_gfrn0")
+
 [node name="Quite music" type="Button" parent="."]
-offset_left = 160.0
-offset_top = 300.0
-offset_right = 260.0
-offset_bottom = 331.0
+offset_left = 169.0
+offset_top = 323.0
+offset_right = 269.0
+offset_bottom = 354.0
 text = "Quite Music"
 script = ExtResource("2_cmihd")
 
@@ -44,27 +52,37 @@ script = ExtResource("2_cmihd")
 position = Vector2(-172, -300)
 stream = ExtResource("3_n3lal")
 
+[node name="6nvqQiGeSyzv3cHf1MhLGdParade" type="Sprite2D" parent="."]
+position = Vector2(537.25, 264.4375)
+scale = Vector2(0.0818879, 0.09165415)
+texture = ExtResource("7_wtb7g")
+
 [node name="Loud music" type="Button" parent="."]
-offset_left = 481.0
-offset_top = 301.0
-offset_right = 577.0
-offset_bottom = 336.0
+offset_left = 486.0
+offset_top = 319.0
+offset_right = 582.0
+offset_bottom = 354.0
 text = "Loud Music"
 script = ExtResource("6_arra4")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Loud music"]
 stream = ExtResource("7_e6lbl")
 
+[node name="TheLevitationCharm31800x1248" type="Sprite2D" parent="."]
+position = Vector2(854.875, 263.50003)
+scale = Vector2(0.15458333, 0.145032)
+texture = ExtResource("10_lifbq")
+
 [node name="People talking" type="Button" parent="."]
-offset_left = 798.0
-offset_top = 300.0
-offset_right = 914.0
-offset_bottom = 331.0
+offset_left = 797.0
+offset_top = 321.0
+offset_right = 918.0
+offset_bottom = 352.0
 text = "People Talking"
 script = ExtResource("4_n3lal")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="People talking"]
-position = Vector2(-798, -300)
+position = Vector2(-994, 69)
 stream = ExtResource("5_yidc2")
 
 [node name="Reset" type="Button" parent="."]
@@ -76,11 +94,19 @@ text = "Reset"
 script = ExtResource("10_oedmo")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 207.0
-offset_top = 114.0
-offset_right = 866.0
-offset_bottom = 153.0
-text = "We can hear conversations in any environment, but we may not understand them."
+offset_left = 98.0
+offset_top = 108.0
+offset_right = 1027.0
+offset_bottom = 147.0
+text = "We can hear conversations in any environment.  But when sounds overlap each other,  we may not understand them."
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = 384.0
+offset_top = 511.0
+offset_right = 676.0
+offset_bottom = 576.0
+text = "When I'm mixed with other sounds, 
+can you still hear me?"
 
 [connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
 [connection signal="pressed" from="Start" to="Start" method="_on_pressed"]

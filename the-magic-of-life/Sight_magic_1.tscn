@@ -1,41 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://csd77jjngtglg"]
+[gd_scene load_steps=5 format=3 uid="uid://jb2cf1wmex8a"]
 
-[ext_resource type="Script" uid="uid://dmpqy8hn34nle" path="res://Reset.gd" id="1_e4qyy"]
 [ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="2_fjde8"]
-[ext_resource type="Shader" uid="uid://b5odaw2dqkr4v" path="res://Sight_magic_1a.gdshader" id="4_515kd"]
-[ext_resource type="Shader" uid="uid://bfe146ijt7v3o" path="res://Sight_magic_1b.gdshader" id="4_i43q0"]
+[ext_resource type="Texture2D" uid="uid://bnanepfs7kyh8" path="res://Screenshot 2025-10-11 180651.png" id="4_ws7ka"]
 [ext_resource type="Texture2D" uid="uid://bsis6kvgmwt8k" path="res://Screenshot 2025-10-07 212644.png" id="5_38a4i"]
-[ext_resource type="Script" uid="uid://dsup5j28q3c7r" path="res://white.gd" id="5_tjbl3"]
-[ext_resource type="Script" uid="uid://drj8yhf1egedc" path="res://grey.gd" id="6_kf81j"]
-[ext_resource type="Script" uid="uid://b0vpo1jy541uk" path="res://black.gd" id="6_tjbl3"]
-[ext_resource type="Script" uid="uid://bqcnea824dskb" path="res://dark_grey.gd" id="7_0qk2s"]
-[ext_resource type="Script" uid="uid://btb5t5p1oxdhy" path="res://light_grey.gd" id="8_kf81j"]
-[ext_resource type="Script" uid="uid://t2yojx2v2y0d" path="res://black2.gd" id="10_aoysh"]
-[ext_resource type="Script" uid="uid://diovct47bv3vn" path="res://white2.gd" id="11_h7poi"]
 [ext_resource type="Script" uid="uid://d22ebi4apysy3" path="res://next_level1.gd" id="12_0qk2s"]
-[ext_resource type="Script" uid="uid://133g2igdno0v" path="res://grey2.gd" id="12_k5tss"]
-[ext_resource type="Script" uid="uid://xrp4ww2er5s6" path="res://dark_grey2.gd" id="13_umcop"]
-[ext_resource type="Script" uid="uid://cijhlnp1db3gm" path="res://light_grey2.gd" id="14_uvv7w"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_i43q0"]
-shader = ExtResource("4_515kd")
-shader_parameter/color_tint1a = Color(1, 1, 1, 1)
-
-[sub_resource type="Gradient" id="Gradient_w2qqe"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_tjbl3"]
-gradient = SubResource("Gradient_w2qqe")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_515kd"]
-shader = ExtResource("4_i43q0")
-shader_parameter/color_tint1b = Color(0, 0, 0, 1)
-
-[sub_resource type="Gradient" id="Gradient_4i68n"]
-offsets = PackedFloat32Array(0, 0.9862069)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_w2qqe"]
-gradient = SubResource("Gradient_4i68n")
 
 [node name="Node" type="Node"]
 
@@ -47,160 +15,35 @@ offset_bottom = 646.0
 text = "Back to Menu"
 script = ExtResource("2_fjde8")
 
-[node name="Reset" type="Button" parent="."]
-offset_left = 1097.0
-offset_top = 545.0
-offset_right = 1148.0
-offset_bottom = 576.0
-text = "Reset"
-script = ExtResource("1_e4qyy")
-
-[node name="Half_White" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_i43q0")
-offset_left = 237.0
-offset_top = 53.0
-offset_right = 547.0
-offset_bottom = 583.0
-texture = SubResource("GradientTexture1D_tjbl3")
-
-[node name="Black" type="Button" parent="Half_White"]
-layout_mode = 0
-offset_left = -111.0
-offset_top = 82.0
-offset_right = -61.0
-offset_bottom = 113.0
-text = "Black"
-script = ExtResource("6_tjbl3")
-
-[node name="White" type="Button" parent="Half_White"]
-layout_mode = 0
-offset_left = -109.0
-offset_top = 415.0
-offset_right = -55.0
-offset_bottom = 446.0
-text = "White"
-script = ExtResource("5_tjbl3")
-
-[node name="Grey" type="Button" parent="Half_White"]
-layout_mode = 0
-offset_left = -110.0
-offset_top = 250.0
-offset_right = -65.0
-offset_bottom = 281.0
-text = "Grey"
-script = ExtResource("6_kf81j")
-
-[node name="Dark Grey" type="Button" parent="Half_White"]
-layout_mode = 0
-offset_left = -128.0
-offset_top = 165.0
-offset_right = -42.0
-offset_bottom = 196.0
-text = "Dark Grey"
-script = ExtResource("7_0qk2s")
-
-[node name="Light Grey" type="Button" parent="Half_White"]
-layout_mode = 0
-offset_left = -128.0
-offset_top = 335.0
-offset_right = -41.0
-offset_bottom = 366.0
-text = "Light Grey"
-script = ExtResource("8_kf81j")
-
-[node name="Half_Black" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_515kd")
-offset_left = 559.0
-offset_top = 53.0
-offset_right = 871.0
-offset_bottom = 583.0
-texture = SubResource("GradientTexture1D_w2qqe")
-
-[node name="Black" type="Button" parent="Half_Black"]
-layout_mode = 0
-offset_left = 385.0
-offset_top = 83.0
-offset_right = 435.0
-offset_bottom = 114.0
-text = "Black"
-script = ExtResource("10_aoysh")
-
-[node name="White" type="Button" parent="Half_Black"]
-layout_mode = 0
-offset_left = 383.0
-offset_top = 423.0
-offset_right = 437.0
-offset_bottom = 454.0
-text = "White"
-script = ExtResource("11_h7poi")
-
-[node name="Grey" type="Button" parent="Half_Black"]
-layout_mode = 0
-offset_left = 390.0
-offset_top = 241.0
-offset_right = 435.0
-offset_bottom = 272.0
-text = "Grey"
-script = ExtResource("12_k5tss")
-
-[node name="Dark Grey" type="Button" parent="Half_Black"]
-layout_mode = 0
-offset_left = 370.0
-offset_top = 152.0
-offset_right = 456.0
-offset_bottom = 183.0
-text = "Dark Grey"
-script = ExtResource("13_umcop")
-
-[node name="Light Grey" type="Button" parent="Half_Black"]
-layout_mode = 0
-offset_left = 369.0
-offset_top = 330.0
-offset_right = 456.0
-offset_bottom = 361.0
-text = "Light Grey"
-script = ExtResource("14_uvv7w")
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="Screenshot20251007212644" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(391, 303)
-scale = Vector2(1.3050463, 0.8490566)
-texture = ExtResource("5_38a4i")
-
-[node name="Next_level" type="Button" parent="."]
-offset_left = 1058.0
-offset_top = 580.0
-offset_right = 1148.0
-offset_bottom = 611.0
+[node name="Next Level" type="Button" parent="."]
+offset_left = 1059.0
+offset_top = 578.0
+offset_right = 1149.0
+offset_bottom = 609.0
 text = "Next Level"
 script = ExtResource("12_0qk2s")
 
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 443.0
-offset_top = 583.0
-offset_right = 671.0
-offset_bottom = 647.0
-text = "Notice the color difference?
-Well, there was none."
+[node name="Screenshot20251011180651" type="Sprite2D" parent="."]
+position = Vector2(560.76843, 301.0318)
+scale = Vector2(1.4355891, 1.3189942)
+texture = ExtResource("4_ws7ka")
 
-[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
-
-[node name="Screenshot20251007212644" type="Sprite2D" parent="CharacterBody2D2"]
-position = Vector2(713.00006, 303)
-scale = Vector2(1.3188077, 0.8490566)
+[node name="Screenshot20251007212644" type="Sprite2D" parent="."]
+position = Vector2(307, 478)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_38a4i")
 
+[node name="Screenshot20251007212645" type="Sprite2D" parent="."]
+position = Vector2(725, 197)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_38a4i")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 384.0
+offset_top = 592.0
+offset_right = 752.0
+offset_bottom = 628.0
+text = "What you see may not actually be what's true."
+
 [connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
-[connection signal="pressed" from="Reset" to="Reset" method="_on_pressed"]
-[connection signal="pressed" from="Half_White/Black" to="Half_White/Black" method="_on_pressed"]
-[connection signal="pressed" from="Half_White/White" to="Half_White/White" method="_on_pressed"]
-[connection signal="pressed" from="Half_White/Grey" to="Half_White/Grey" method="_on_pressed"]
-[connection signal="pressed" from="Half_White/Dark Grey" to="Half_White/Dark Grey" method="_on_pressed"]
-[connection signal="pressed" from="Half_White/Light Grey" to="Half_White/Light Grey" method="_on_pressed"]
-[connection signal="pressed" from="Half_Black/Black" to="Half_Black/Black" method="_on_pressed"]
-[connection signal="pressed" from="Half_Black/White" to="Half_Black/White" method="_on_pressed"]
-[connection signal="pressed" from="Half_Black/Grey" to="Half_Black/Grey" method="_on_pressed"]
-[connection signal="pressed" from="Half_Black/Dark Grey" to="Half_Black/Dark Grey" method="_on_pressed"]
-[connection signal="pressed" from="Half_Black/Light Grey" to="Half_Black/Light Grey" method="_on_pressed"]
-[connection signal="pressed" from="Next_level" to="Next_level" method="_on_pressed"]
+[connection signal="pressed" from="Next Level" to="Next Level" method="_on_pressed"]

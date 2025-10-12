@@ -1,4 +1,8 @@
 extends Button
 
 func _on_pressed() -> void:
-	$AudioStreamPlayer2D.play()
+	var music = $AudioStreamPlayer2D
+	if music.playing:
+		music.stop()
+	else:
+		music.play()

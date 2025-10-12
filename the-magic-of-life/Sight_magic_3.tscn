@@ -1,12 +1,41 @@
-[gd_scene load_steps=7 format=3 uid="uid://cejfxw548v3up"]
+[gd_scene load_steps=23 format=3 uid="uid://csd77jjngtglg"]
 
 [ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="1_udxe5"]
-[ext_resource type="Texture2D" uid="uid://b3wi143wx4lit" path="res://Untitled_Artwork (11).png" id="2_cco7g"]
+[ext_resource type="Script" uid="uid://dmpqy8hn34nle" path="res://Reset.gd" id="2_eesf3"]
 [ext_resource type="Script" uid="uid://drajlu28dthna" path="res://Back2.gd" id="2_gyo77"]
+[ext_resource type="Shader" uid="uid://b5odaw2dqkr4v" path="res://Sight_magic_1a.gdshader" id="3_wug8m"]
 [ext_resource type="Texture2D" uid="uid://bsis6kvgmwt8k" path="res://Screenshot 2025-10-07 212644.png" id="4_ftlxt"]
-[ext_resource type="Script" uid="uid://barjjdsq0ci66" path="res://character_body_2d.gd" id="5_ftlxt"]
+[ext_resource type="Script" uid="uid://b0vpo1jy541uk" path="res://black.gd" id="4_pkxb7"]
+[ext_resource type="Script" uid="uid://dsup5j28q3c7r" path="res://white.gd" id="5_7nsc7"]
+[ext_resource type="Script" uid="uid://drj8yhf1egedc" path="res://grey.gd" id="6_dyllx"]
+[ext_resource type="Script" uid="uid://bqcnea824dskb" path="res://dark_grey.gd" id="7_wytma"]
+[ext_resource type="Script" uid="uid://btb5t5p1oxdhy" path="res://light_grey.gd" id="8_bfuro"]
+[ext_resource type="Shader" uid="uid://bfe146ijt7v3o" path="res://Sight_magic_1b.gdshader" id="9_hev43"]
+[ext_resource type="Script" uid="uid://t2yojx2v2y0d" path="res://black2.gd" id="10_6kf6q"]
+[ext_resource type="Script" uid="uid://diovct47bv3vn" path="res://white2.gd" id="11_nm5lx"]
+[ext_resource type="Script" uid="uid://133g2igdno0v" path="res://grey2.gd" id="12_o4mkp"]
+[ext_resource type="Script" uid="uid://xrp4ww2er5s6" path="res://dark_grey2.gd" id="13_peol4"]
+[ext_resource type="Script" uid="uid://cijhlnp1db3gm" path="res://light_grey2.gd" id="14_0fsl2"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ftlxt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i43q0"]
+shader = ExtResource("3_wug8m")
+shader_parameter/color_tint1a = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_w2qqe"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tjbl3"]
+gradient = SubResource("Gradient_w2qqe")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_515kd"]
+shader = ExtResource("9_hev43")
+shader_parameter/color_tint1b = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_4i68n"]
+offsets = PackedFloat32Array(0, 0.9862069)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w2qqe"]
+gradient = SubResource("Gradient_4i68n")
 
 [node name="Node" type="Node"]
 
@@ -18,49 +47,160 @@ offset_bottom = 646.0
 text = "Back to Menu"
 script = ExtResource("1_udxe5")
 
-[node name="Button" type="Button" parent="."]
-offset_left = 3.0
-offset_top = 615.0
-offset_right = 48.0
-offset_bottom = 646.0
+[node name="Reset" type="Button" parent="."]
+offset_left = 1097.0
+offset_top = 578.0
+offset_right = 1148.0
+offset_bottom = 609.0
+text = "Reset"
+script = ExtResource("2_eesf3")
+
+[node name="Back" type="Button" parent="."]
+offset_left = 7.0
+offset_top = 609.0
+offset_right = 52.0
+offset_bottom = 640.0
 text = "Back"
 script = ExtResource("2_gyo77")
 
-[node name="UntitledArtwork(11)" type="Sprite2D" parent="."]
-position = Vector2(554.74994, 312.5625)
-scale = Vector2(0.5371796, 0.41617876)
-texture = ExtResource("2_cco7g")
+[node name="Half_White" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_i43q0")
+offset_left = 237.0
+offset_top = 53.0
+offset_right = 547.0
+offset_bottom = 583.0
+texture = SubResource("GradientTexture1D_tjbl3")
 
-[node name="Screenshot20251007212644" type="Sprite2D" parent="."]
-position = Vector2(367, 321.00003)
-scale = Vector2(0.56422013, 0.9999997)
-texture = ExtResource("4_ftlxt")
+[node name="Black" type="Button" parent="Half_White"]
+layout_mode = 0
+offset_left = -111.0
+offset_top = 82.0
+offset_right = -61.0
+offset_bottom = 113.0
+text = "Black"
+script = ExtResource("4_pkxb7")
+
+[node name="White" type="Button" parent="Half_White"]
+layout_mode = 0
+offset_left = -109.0
+offset_top = 415.0
+offset_right = -55.0
+offset_bottom = 446.0
+text = "White"
+script = ExtResource("5_7nsc7")
+
+[node name="Grey" type="Button" parent="Half_White"]
+layout_mode = 0
+offset_left = -110.0
+offset_top = 250.0
+offset_right = -65.0
+offset_bottom = 281.0
+text = "Grey"
+script = ExtResource("6_dyllx")
+
+[node name="Dark Grey" type="Button" parent="Half_White"]
+layout_mode = 0
+offset_left = -128.0
+offset_top = 165.0
+offset_right = -42.0
+offset_bottom = 196.0
+text = "Dark Grey"
+script = ExtResource("7_wytma")
+
+[node name="Light Grey" type="Button" parent="Half_White"]
+layout_mode = 0
+offset_left = -128.0
+offset_top = 335.0
+offset_right = -41.0
+offset_bottom = 366.0
+text = "Light Grey"
+script = ExtResource("8_bfuro")
+
+[node name="Half_Black" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_515kd")
+offset_left = 559.0
+offset_top = 53.0
+offset_right = 871.0
+offset_bottom = 583.0
+texture = SubResource("GradientTexture1D_w2qqe")
+
+[node name="Black" type="Button" parent="Half_Black"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 83.0
+offset_right = 435.0
+offset_bottom = 114.0
+text = "Black"
+script = ExtResource("10_6kf6q")
+
+[node name="White" type="Button" parent="Half_Black"]
+layout_mode = 0
+offset_left = 383.0
+offset_top = 423.0
+offset_right = 437.0
+offset_bottom = 454.0
+text = "White"
+script = ExtResource("11_nm5lx")
+
+[node name="Grey" type="Button" parent="Half_Black"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 241.0
+offset_right = 435.0
+offset_bottom = 272.0
+text = "Grey"
+script = ExtResource("12_o4mkp")
+
+[node name="Dark Grey" type="Button" parent="Half_Black"]
+layout_mode = 0
+offset_left = 370.0
+offset_top = 152.0
+offset_right = 456.0
+offset_bottom = 183.0
+text = "Dark Grey"
+script = ExtResource("13_peol4")
+
+[node name="Light Grey" type="Button" parent="Half_Black"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 330.0
+offset_right = 456.0
+offset_bottom = 361.0
+text = "Light Grey"
+script = ExtResource("14_0fsl2")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-collision_layer = 2
-script = ExtResource("5_ftlxt")
 
-[node name="Screenshot20251007212645" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(903.00006, 319.00003)
-scale = Vector2(0.56422013, 0.9999997)
+[node name="Screenshot20251007212644" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(392.99997, 303)
+scale = Vector2(1.3, 0.9)
 texture = ExtResource("4_ftlxt")
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 458.0
-offset_top = 581.0
-offset_right = 676.0
-offset_bottom = 646.0
-text = "Notice the size difference?
-Again, there's none."
+offset_left = 443.0
+offset_top = 583.0
+offset_right = 671.0
+offset_bottom = 647.0
+text = "Notice the color difference?
+Again, there was none."
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 0
-collision_mask = 2
-physics_material_override = SubResource("PhysicsMaterial_ftlxt")
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-build_mode = 1
-polygon = PackedVector2Array(296, 265, 950, 264, 951, 377, 295, 380)
+[node name="Screenshot20251007212644" type="Sprite2D" parent="CharacterBody2D2"]
+position = Vector2(715.00006, 303)
+scale = Vector2(1.3, 0.9)
+texture = ExtResource("4_ftlxt")
 
 [connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Reset" to="Reset" method="_on_pressed"]
+[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
+[connection signal="pressed" from="Half_White/Black" to="Half_White/Black" method="_on_pressed"]
+[connection signal="pressed" from="Half_White/White" to="Half_White/White" method="_on_pressed"]
+[connection signal="pressed" from="Half_White/Grey" to="Half_White/Grey" method="_on_pressed"]
+[connection signal="pressed" from="Half_White/Dark Grey" to="Half_White/Dark Grey" method="_on_pressed"]
+[connection signal="pressed" from="Half_White/Light Grey" to="Half_White/Light Grey" method="_on_pressed"]
+[connection signal="pressed" from="Half_Black/Black" to="Half_Black/Black" method="_on_pressed"]
+[connection signal="pressed" from="Half_Black/White" to="Half_Black/White" method="_on_pressed"]
+[connection signal="pressed" from="Half_Black/Grey" to="Half_Black/Grey" method="_on_pressed"]
+[connection signal="pressed" from="Half_Black/Dark Grey" to="Half_Black/Dark Grey" method="_on_pressed"]
+[connection signal="pressed" from="Half_Black/Light Grey" to="Half_Black/Light Grey" method="_on_pressed"]

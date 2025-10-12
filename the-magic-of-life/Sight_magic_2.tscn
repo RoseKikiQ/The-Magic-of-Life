@@ -1,10 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://jb2cf1wmex8a"]
+[gd_scene load_steps=9 format=3 uid="uid://cejfxw548v3up"]
 
 [ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="1_jo3u4"]
 [ext_resource type="Script" uid="uid://cg0l3evvvupfm" path="res://next_level2.gd" id="2_5dqcp"]
+[ext_resource type="Texture2D" uid="uid://b3wi143wx4lit" path="res://Untitled_Artwork (11).png" id="3_3c556"]
 [ext_resource type="Script" uid="uid://cg0myke2ec1gt" path="res://back1.gd" id="3_o087g"]
-[ext_resource type="Texture2D" uid="uid://bnanepfs7kyh8" path="res://Screenshot 2025-10-11 180651.png" id="4_c4vgk"]
 [ext_resource type="Texture2D" uid="uid://bsis6kvgmwt8k" path="res://Screenshot 2025-10-07 212644.png" id="5_q8odj"]
+[ext_resource type="Script" uid="uid://barjjdsq0ci66" path="res://character_body_2d.gd" id="5_sfl80"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftlxt"]
+size = Vector2(63, 105)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ftlxt"]
 
 [node name="Node" type="Node"]
 
@@ -16,44 +22,73 @@ offset_bottom = 646.0
 text = "Back to Menu"
 script = ExtResource("1_jo3u4")
 
+[node name="Button" type="Button" parent="."]
+offset_left = 3.0
+offset_top = 615.0
+offset_right = 48.0
+offset_bottom = 646.0
+text = "Back"
+script = ExtResource("3_o087g")
+
+[node name="UntitledArtwork(11)" type="Sprite2D" parent="."]
+position = Vector2(553.95905, 297.5625)
+scale = Vector2(0.5371796, 0.41617876)
+texture = ExtResource("3_3c556")
+
+[node name="Screenshot20251007212644" type="Sprite2D" parent="."]
+position = Vector2(354.2091, 309)
+scale = Vector2(0.6, 1)
+texture = ExtResource("5_q8odj")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+collision_layer = 2
+script = ExtResource("5_sfl80")
+
+[node name="Screenshot20251007212645" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(906.2091, 309)
+scale = Vector2(0.6, 1)
+texture = ExtResource("5_q8odj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(905.7091, 308.49997)
+shape = SubResource("RectangleShape2D_ftlxt")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 460.0
+offset_top = 572.0
+offset_right = 678.0
+offset_bottom = 637.0
+text = "Notice the size difference?
+Well, there's none."
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, 0)
+physics_material_override = SubResource("PhysicsMaterial_ftlxt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, -16)
+scale = Vector2(1, 1.0000094)
+build_mode = 1
+polygon = PackedVector2Array(320, 270.99747, 938, 270.99747, 938, 376.99646, 320, 376.99646)
+
 [node name="Next Level" type="Button" parent="."]
-offset_left = 1059.0
+offset_left = 1058.0
 offset_top = 578.0
-offset_right = 1149.0
+offset_right = 1148.0
 offset_bottom = 609.0
 text = "Next Level"
 script = ExtResource("2_5dqcp")
 
-[node name="Back" type="Button" parent="."]
-offset_left = 3.0
-offset_top = 614.0
-offset_right = 55.0
-offset_bottom = 645.0
-text = "Back"
-script = ExtResource("3_o087g")
-
-[node name="Screenshot20251011180651" type="Sprite2D" parent="."]
-position = Vector2(560.76843, 301.0318)
-scale = Vector2(1.4355891, 1.3189942)
-texture = ExtResource("4_c4vgk")
-
-[node name="Screenshot20251007212644" type="Sprite2D" parent="."]
-position = Vector2(358.7685, 437.03177)
-scale = Vector2(0.77981615, 0.8301886)
-texture = ExtResource("5_q8odj")
-
-[node name="Screenshot20251007212645" type="Sprite2D" parent="."]
-position = Vector2(714.76843, 208.0318)
-scale = Vector2(0.77981615, 0.8301886)
-texture = ExtResource("5_q8odj")
-
-[node name="TextEdit" type="TextEdit" parent="."]
-offset_left = 384.0
-offset_top = 592.0
-offset_right = 752.0
-offset_bottom = 628.0
-text = "What you see may not actually be what's true."
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = 981.0
+offset_top = 35.0
+offset_right = 1119.0
+offset_bottom = 154.0
+text = "Use arrow keys
+to move and
+compare the
+blocks."
 
 [connection signal="pressed" from="Back to Menu" to="Back to Menu" method="_on_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 [connection signal="pressed" from="Next Level" to="Next Level" method="_on_pressed"]
-[connection signal="pressed" from="Back" to="Back" method="_on_pressed"]
