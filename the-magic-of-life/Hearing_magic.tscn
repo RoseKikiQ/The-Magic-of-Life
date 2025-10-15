@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0bbh1lvldyyq"]
+[gd_scene load_steps=15 format=3 uid="uid://d0bbh1lvldyyq"]
 
 [ext_resource type="Script" uid="uid://18oc72le35hb" path="res://Back_to_menu.gd" id="1_vdvee"]
+[ext_resource type="Script" uid="uid://catpuenul0m2q" path="res://Random.gd" id="1_wtb7g"]
 [ext_resource type="Script" uid="uid://di241fk4e6gqm" path="res://Quite_music.gd" id="2_cmihd"]
 [ext_resource type="Script" uid="uid://diujtsxllg555" path="res://Start.gd" id="2_ukqhs"]
 [ext_resource type="AudioStream" uid="uid://c7elcic3lehsn" path="res://Morning.mp3" id="3_n3lal"]
@@ -15,6 +16,7 @@
 [ext_resource type="Script" uid="uid://few8ddiwxx7" path="res://Reset2.gd" id="10_oedmo"]
 
 [node name="Node" type="Node"]
+script = ExtResource("1_wtb7g")
 
 [node name="Back to Menu" type="Button" parent="."]
 offset_left = 1035.0
